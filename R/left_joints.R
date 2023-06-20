@@ -16,10 +16,10 @@ left_joints <- function(list, ...) {
 
   purrr::imap(list, ~ if_not_in_stop(.x, quoted_cols, .y, arg = "..."))
 
-  joined <- list |>
-    purrr::reduce(
-      dplyr::left_join,
-      by = quoted_cols
+  joined <- purrr::reduce(
+    list,
+    dplyr::left_join,
+    by = quoted_cols
     )
 
   return(joined)

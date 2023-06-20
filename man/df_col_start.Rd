@@ -4,7 +4,7 @@
 \alias{df_col_start}
 \alias{df_col_end}
 \alias{df_col_start_end}
-\title{Get colnames that start, end, or both with a string.}
+\title{Get colnames that start, end, or both with a string}
 \usage{
 df_col_start(df, pattern_start)
 
@@ -23,5 +23,5 @@ df_col_start_end(df, pattern_start, pattern_end)
 A vector of column names
 }
 \description{
-Get colnames that start, end, or both with a string.
+Get colnames that start, end, or both with a string
 }

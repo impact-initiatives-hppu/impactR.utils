@@ -1,7 +1,7 @@
 #' Get colnames that start, end, or both with a string
 #'
 #' @param df  A data frame.
-#' @param start A start string
+#' @param pattern_start A start string
 #'
 #' @return A vector of column names
 #'
@@ -17,7 +17,7 @@ df_col_start <- function(df, pattern_start){
 
 #' @rdname df_col_start
 #'
-#' @param end An end string.
+#' @param pattern_end An end string.
 #'
 #' @export
 df_col_end <- function(df, pattern_end){
