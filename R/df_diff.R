@@ -17,7 +17,7 @@ df_diff <- function(df_a, df_b, ...) {
 
   df_b <- dplyr::select(df_b, -dplyr::all_of(quoted_cols))
 
-  cols_df_b <- colnames()
+  cols_df_b <- colnames(df_b)
 
   df_a <- dplyr::select(df_a, -dplyr::any_of(cols_df_b))
 
