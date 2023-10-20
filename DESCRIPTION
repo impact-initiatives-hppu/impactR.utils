@@ -13,7 +13,10 @@ Imports:
     rlang (>= 0.4.11),
     glue,
     stringr,
-    purrr
+    purrr,
+    janitor,
+    readr,
+    readxl
 Depends: 
     R (>= 2.10)
 LazyData: true
