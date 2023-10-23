@@ -1,22 +1,23 @@
 #' Named group split
 #'
 #' @param df A data frame.
-#' @param group Column to split group by.
+#' @param group Quoted column name to group by.
 #'
-#' @return  A split and named list of data frames
+#' @return  A split and named list of data frames.
 #'
 #' @export
 named_group_split <- function(df, group) {
-  group_name <- rlang::as_name(rlang::enquo(group))
-  if_not_in_stop(df, group_name, "df", "group")
 
-  names <- dplyr::group_keys(dplyr::group_by(df, {{ group }}))
+  if_not_in_stop(df, group, "df", "group")
+  if (length(group) > 1) rlang::abort("Please provide on one grouping column.")
 
-  names <- dplyr::pull(df, {{ group }})
+  names <- dplyr::group_keys(dplyr::group_by(df, !!!rlang::syms(group)))
 
-  df <- dplyr::group_split(df, {{ group }})
+  names <- dplyr::pull(names, dplyr::all_of(group))
 
-  df <- purrr::set_names(df, names)
+  l <- dplyr::group_split(df, dplyr::all_of(group))
 
-  return(df)
+  l <- purrr::set_names(l, names)
+
+  return(l)
 }
