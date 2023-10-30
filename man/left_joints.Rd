@@ -2,18 +2,18 @@
 % Please edit documentation in R/left_joints.R
 \name{left_joints}
 \alias{left_joints}
-\title{Left join a few data frames in a list}
+\title{Left join a list of dataframes}
 \usage{
 left_joints(list, ...)
 }
 \arguments{
 \item{list}{A list of data frames.}
 
-\item{...}{Grouping columns.}
+\item{...}{Columns to join by.}
 }
 \value{
 A left-joined data frame.
 }
 \description{
-Left join a few data frames in a list
+Left join a list of dataframes
 }

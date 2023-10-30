@@ -9,10 +9,10 @@ named_group_split(df, group)
 \arguments{
 \item{df}{A data frame.}
 
-\item{group}{Column to split group by.}
+\item{group}{Quoted column name to group by.}
 }
 \value{
-A split and named list of data frames
+A split and named list of data frames.
 }
 \description{
 Named group split

@@ -1,7 +1,7 @@
-#' Left join a few data frames in a list
+#' Left join a list of dataframes
 #'
 #' @param list A list of data frames.
-#' @param ... Grouping columns.
+#' @param ... Columns to join by.
 #'
 #' @return A left-joined data frame.
 #'
@@ -9,7 +9,7 @@
 left_joints <- function(list, ...) {
   # add checks on the list
   # - check if empty list
-  # - check if less than two elemeents
+  # - check if less than two elements
   # - check if elements are not data frames
 
   quoted_cols <- purrr::map_chr(rlang::enquos(...), rlang::as_name)
@@ -24,3 +24,4 @@ left_joints <- function(list, ...) {
 
   return(joined)
 }
+
